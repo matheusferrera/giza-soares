@@ -1,4 +1,4 @@
-import { Heart, Shield, Users, Mail, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Heart, Shield, Mail, CheckCircle2, ArrowRight, BookOpen } from 'lucide-react';
 import { FaInstagram } from 'react-icons/fa';
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
             </h1>
             
             <p className="text-lg md:text-xl text-brand-200 mb-10 max-w-2xl leading-relaxed balance">
-              Cristã, esposa e mãe de quatro filhos. Dedicada a trazer renovação com princípios reais para a nossa cidade.
+              Cristã, esposa, mãe de três filhos e especialista em Educação Inclusiva. Dedicada a trazer renovação com princípios reais para a nossa cidade, garantindo que nenhuma família fique para trás.
             </p>
             
             <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-4">
@@ -125,19 +125,19 @@ function App() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
+                  icon: BookOpen,
+                  title: "Educação Inclusiva de Verdade",
+                  desc: "Garantir estrutura, profissionais capacitados e suporte real para crianças atípicas e suas famílias nas escolas."
+                },
+                {
                   icon: Heart,
                   title: "Defesa da Família",
-                  desc: "Políticas públicas que fortalecem a estrutura familiar e apoiam a educação."
+                  desc: "Políticas públicas que fortalecem a base familiar, apoiando mães e pais na educação integral de seus filhos."
                 },
                 {
                   icon: Shield,
-                  title: "Segurança e Ética",
-                  desc: "Luta por mais segurança e total transparência na gestão pública."
-                },
-                {
-                  icon: Users,
-                  title: "Futuro dos Jovens",
-                  desc: "Projetos focados na formação de jovens com valores e preparo profissional."
+                  title: "Ética e Transparência",
+                  desc: "Luta por uma gestão justa, onde o dinheiro público é investido no que realmente importa: as pessoas."
                 }
               ].map((item, idx) => (
                 <div key={idx} className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">

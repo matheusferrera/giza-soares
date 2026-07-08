@@ -1,25 +1,75 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50: #f5f3ff;
-  --color-brand-100: #ede9fe;
-  --color-brand-500: #8b5cf6;
-  --color-brand-600: #7c3aed;
-  --color-brand-700: #6d28d9;
-  --color-brand-800: #5b21b6;
-  --color-brand-900: #4c1d95;
-  --color-brand-950: #2e1065;
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-script: "Dancing Script", cursive;
+
+  --color-roxo-50: #f5f1fb;
+  --color-roxo-100: #ece4f7;
+  --color-roxo-200: #d5c5ee;
+  --color-roxo-300: #b49ade;
+  --color-roxo-400: #8d6cc7;
+  --color-roxo-500: #6b46ab;
+  --color-roxo-600: #55338f;
+  --color-roxo-700: #46297a;
+  --color-roxo-800: #37205f;
+  --color-roxo-900: #2a1849;
+
+  --color-ouro-50: #fdf8ec;
+  --color-ouro-100: #faedc8;
+  --color-ouro-200: #f6dd92;
+  --color-ouro-300: #f2c94c;
+  --color-ouro-400: #eeb52a;
+  --color-ouro-500: #d99a16;
+  --color-ouro-600: #a86f10;
+
+  --color-creme-50: #fdfbf7;
+  --color-creme-100: #faf6ee;
+  --color-creme-200: #f3ecdd;
+
+  --color-ink: #3f3357;
+  --color-ink-soft: #665a80;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  scroll-behavior: smooth;
+  background-color: var(--color-creme-100);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Background pattern for hero */
-.bg-grid-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-  background-size: 24px 24px;
+::selection {
+  background-color: var(--color-ouro-200);
+  color: var(--color-roxo-900);
+}
+
+/* Revelação suave ao rolar (desligada com prefers-reduced-motion) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.55s ease-out,
+    transform 0.55s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

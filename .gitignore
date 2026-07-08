@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Local references and browser captures
+referencia/
+.playwright-mcp/
+full-desktop*.jpeg
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
